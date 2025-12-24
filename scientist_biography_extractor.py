@@ -16,9 +16,9 @@ args=parser.parse_args()
 # fetch web page
 
 scientist_name=args.name.replace(" ","_")
-url="https://en.m.wikipedia.org/wiki/"+scientist_name
+url="https://en.wikipedia.org/wiki/"+scientist_name
 headers={
-    "User-Agent": "Mozilla/5.0 (Linux; Android 10; Mobile)",
+    "User-Agent": "Mozilla/5.0 (Linux; Android 10)",
     "Accept-Language": "en-US,en;q=0.9"
 }
 
@@ -40,7 +40,7 @@ title=soup.find("h1").text
 
 content=soup.find("div",class_="mw-parser-output")
 paragraphs=[]
-for p in content.find_all("p",recursive=False):
+for p in content.find_all("p"):
     if p.text.strip():
         text = re.sub(r'\[.*?\]', '', p.text).strip()
         paragraphs.append(text)
