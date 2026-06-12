@@ -66,3 +66,5 @@ python3 scientist_biography_extractor.py "Albert Einstein" --output einstein
 
 output/einstein.txt
 
+---
+
